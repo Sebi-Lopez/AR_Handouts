@@ -39,3 +39,13 @@ for i in range(5,20):
 
 else: print("For loop is over")
 
+def getSize():
+    return (30,50)
+
+width, height = getSize()
+print(width, height)
+
+def hello(a, b):
+    return a + b
+
+print(hello(2,5))
