@@ -55,4 +55,11 @@ def ex7():
     arr = np.identity(3)
     print(arr)
 
-ex7()
+# ex7()
+
+def ex8(): 
+    print("Exercice 8")
+    arr = np.identity(3)
+    print(arr)
+
+ex8()
