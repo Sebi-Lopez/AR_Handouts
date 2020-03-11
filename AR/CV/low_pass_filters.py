@@ -2,24 +2,22 @@
 import cv2 
 import numpy as np
 
-img = cv2.imread("assets/lena_noise.jpg", 0)
+img = cv2.imread("assets/lena_noise.jpg", cv2.IMREAD_GRAYSCALE)
 out = np.zeros((img.shape))
 
-rows = len(img)
-columns = len(img[0])
+rows, columns = img.shape
 
 for i in range(0, rows):
     for j in range (0, columns):
-            out[i][j] = img[i][j]
+        out[i, j] = img[i, j]/255
 
-img2 = np.zeros(shape = (rows + 1, columns + 1))
+# img2 = np.zeros(shape = (rows + 1, columns + 1))
 
-for i in range(0, rows + 1):
-    for j in range (0, columns + 1):
-        if i != 0 & j != 0:
-            img2[i][j] = img[i][j]
+# for i in range(0, rows + 1):
+#     for j in range (0, columns + 1):
+#         if i != 0 & j != 0:
+#             img2[i, j] = img[i, j]
         
-cv2.imwrite("assets/lena_unnoise.jpg", out)
 cv2.imshow("assets/lena_unnoise.jpg", out)
 
 # rows = len(img2)
